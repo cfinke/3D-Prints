@@ -1,5 +1,5 @@
-Coach-Sunglass-Accent
-==============================
+Coach Sunglass Accent
+=====================
 
 3D model of an accent from the earpiece for a pair of Coach sunglasses. I don't know the specific model or type of the glasses.
 
