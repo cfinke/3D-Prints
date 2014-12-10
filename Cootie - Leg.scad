@@ -5,16 +5,16 @@ intersection() {
 	translate([0, 0, -max_dimension]) linear_extrude(max_dimension*2) polygon(points=[
 		[0, 0], // Tip of toe.
 		[7.9,0], // Back of heel
-		[13.15, 27.8], // Under knee
-		[18.8, 25.75], // Bottom of post-knee joint
+		[13.15, 28.5], // Under knee
+		[18.8, 26.5], // Bottom of post-knee joint
 		[25,27.3], // Bottom back of leg.
 		[25, 30], // Bottom of beginning of peg
-		[33, 30], // Bottom of end of peg.
-		[33, 33], // Top of end of peg.
+		[34, 30], // Bottom of end of peg.
+		[34, 33], // Top of end of peg.
 		[25, 33], // Top of beginning of peg.
 		[25, 35.8], // Top of back of leg.
 		[18.5, 34.35], // Top of post-knee joint.
-		[8.1, 37.15], // Top of knee
+		[8.5, 37.15], // Top of knee
 		[4, 4.3], // Top of ankle
 		[.75, 3] // Top of toe
 	]);
@@ -27,7 +27,7 @@ intersection() {
 		[2.9, 27.8], // Under knee
 		[2.8, 29], // Under knee
 		[2.7, 31], // Under knee
-		[2.6, 33], // Under knee
+		[2.6, 34], // Under knee
 		[2, 35],
 		[0, 37.15], // Top of knee
 		[-2, 35],
@@ -51,9 +51,9 @@ intersection() {
 		[18.8, 2.9], // Bottom of post-knee joint
 		[25,2.9], // Bottom back of leg.
 		[25, 1.75], // Bottom of beginning of peg
-		[33, 1.75], // Bottom of end of peg.
-		[33, 0], // Bottom of end of peg.
-		[33, -1.75], // Bottom of end of peg.
+		[34, 1.75], // Bottom of end of peg.
+		[34, 0], // Bottom of end of peg.
+		[34, -1.75], // Bottom of end of peg.
 		[25, -1.75], // Bottom of beginning of peg
 		[25,-2.9], // Bottom back of leg.
 		[18.8, -2.9], // Bottom of post-knee joint
