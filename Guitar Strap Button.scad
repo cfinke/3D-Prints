@@ -2,27 +2,51 @@
  * Strap button for a child's guitar. 13mm tall, ~15mm wide at the widest.
  */
 
-$fa = 1;
-$fs = 1;
+// Button width.
+width = 14.8;
+
+// Button height.
+height = 13;
+
+// Screw diameter.
+screw_diameter = 4.1;
+
+// Countersink diameter.
+countersink_diameter = 6.9;
+
+// Countersink depth.
+countersink_depth = 3;
 
 module strap_button() {
 	current_height = 0;
+	
+	bottom_ridge_height = (1.8 / width) * width;
+	bottom_ridge_diameter = (5.4 / 7.4) * width;
+	
+	flare_height = (2.9 / 14.8) * width;
+	
+	top_height = (3.4 / 14.8) * width;
+
+	center_height = height - bottom_ridge_height - flare_height - top_height;//(5.5 / 13) * height;
+	center_diameter = (3.75 / 7.4) * width;
+	
+	$fa = 1;
+	$fs = 1;
 
 	difference() {
 		union() {
 			// Bottom ridge
-			translate([0, 0, current_height]) cylinder(r=5.4, h=1.8);
+			translate([0, 0, current_height]) cylinder(r=bottom_ridge_diameter / 2, h=bottom_ridge_height);
 		
-			assign(current_height = current_height + 1.8) {
-			
+			assign(current_height = current_height + bottom_ridge_height) {
 				// Thin part.
-				translate([0, 0, current_height]) cylinder(r=3.75, h=5.5);
-				assign(current_height = current_height + 5.5) {
-					translate([0, 0, current_height]) cylinder(r1=3.75, r2=7.4, h=2.9);
-					assign(current_height = current_height + 2.9) {
+				translate([0, 0, current_height]) cylinder(r=center_diameter / 2, h=center_height);
+				assign(current_height = current_height + center_height) {
+					translate([0, 0, current_height]) cylinder(r1=center_diameter / 2, r2=width / 2, h=flare_height);
+					assign(current_height = current_height + flare_height) {
 						translate([0, 0, current_height]) difference() {
-							scale([1, 1, .23]) sphere(r=7.4);
-							translate([0, 0, -7.4]) cube([14.8, 14.8, 14.8], true);
+							resize([width, width, top_height]) sphere(r=width / 2);
+							translate([0, 0, -width / 2]) cube([width, width, width], true);
 						};
 					};
 					
@@ -30,8 +54,8 @@ module strap_button() {
 			};
 		}
 
-		cylinder(r=2.05, h=13);
-		translate([0, 0, 9.1]) cylinder(r=3.45, h=3);
+		cylinder(r=screw_diameter / 2, h=height);
+		translate([0, 0, height - countersink_depth]) cylinder(r=countersink_diameter / 2, h=countersink_depth);
 	};
 }
 
