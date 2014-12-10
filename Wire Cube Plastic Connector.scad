@@ -3,7 +3,8 @@ height = 26;
 wall_width = 2.9;
 horizontal_wall_width = 2.2;
 base_height = 2.9;
-shelf_gap = 5.1;
+shelf_gap = 5.15;
+horizontal_shelf_gap = 5.25;
 shelf_ridge_gap = 4;
 center_support_width = 9.5;
 base_bulge_radius = 4 * height;
@@ -23,7 +24,7 @@ module wire_cube_plastic_connector()  {
 					translate([0, 0, height / 2]) cube([width, shelf_gap + (2*wall_width), height], true);
 					cylinder(r=width/2, h=base_height);
 	
-					translate([0, 0, base_height + shelf_gap]) cylinder(r=width / 2, h=horizontal_wall_width);
+					translate([0, 0, base_height + horizontal_shelf_gap]) cylinder(r=width / 2, h=horizontal_wall_width);
 	
 					// The ridges on either side of the base shelf openings.
 					intersection() {
@@ -38,12 +39,12 @@ module wire_cube_plastic_connector()  {
 			
 					intersection() {
 						cylinder(r=width/2 - ridge_offset, h=height);
-						translate([0, 0, shelf_gap]) translate([0, 0, base_height]) rotate([90, 0, 0]) ridges();
+						translate([0, 0, horizontal_shelf_gap]) translate([0, 0, base_height]) rotate([90, 0, 0]) ridges();
 					}
 	
 					intersection() {
 						cylinder(r=width/2 - ridge_offset, h=height);
-						translate([0, 0, shelf_gap]) mirror([0, 1, 0]) translate([0, 0, base_height]) rotate([90, 0, 0]) ridges();
+						translate([0, 0, horizontal_shelf_gap]) mirror([0, 1, 0]) translate([0, 0, base_height]) rotate([90, 0, 0]) ridges();
 					}
 				}
 				union() {
