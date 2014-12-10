@@ -3,16 +3,21 @@
  * All measurements are in mm.
  */
 
-$fs = 1;
-$fa = 1;
-
+// The width of the tray.
 width = 64;
 
+// The thickness of the tray sides.
 base_thickness = 1.9;
+
+// The length of the tray base.
 base_length = 90;
 
+// The height of the tray front.
 end_height = 47.5;
+
+// The thickness of the tray front, including the ridges.
 end_thickness_max = 3.4;
+
 end_thickness_min = end_thickness_max / 2;
 
 end_ridge_radius = end_thickness_max - end_thickness_min;
@@ -21,6 +26,9 @@ ridges = floor( width / ( end_ridge_radius * 2 ) );
 
 // Calculate a width that will allow for an exact number of ridges.
 even_width = (ridges * end_ridge_radius * 2 );   
+
+$fs = 1;
+$fa = 1;
 
 // Base
 translate([end_thickness_max, 0, 0]) union() {
