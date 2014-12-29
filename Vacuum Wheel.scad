@@ -10,8 +10,8 @@ wheel_wall_thickness = 3;
 wheel_edge_radius = 4;
 
 wheel_outer_height = 16.5;
-wheel_inner_height_max = 20;
-wheel_inner_height_min = 18.4;
+wheel_inner_height_max = 16.5;//20;
+wheel_inner_height_min = 16.5;//18.4;
 
 wheel_outer_width = 10;
 
@@ -88,7 +88,9 @@ union() {
 			union() {
 				cylinder(r=wheel_clip_width_min / 2, h=wheel_clip_height);
 				translate([0, 0, wheel_clip_height - wheel_clip_jut_height]) cylinder(r1=wheel_clip_width_max / 2, r2=wheel_clip_width_min / 2, h=wheel_clip_jut_height);
-				cylinder(r=wheel_clip_width_max / 2, h=wheel_clip_height / 3);
+				cylinder(r1=wheel_clip_width_max / 2, r2=wheel_clip_width_min / 2, h=wheel_clip_height - wheel_clip_jut_height);
+
+				//cylinder(r=wheel_clip_width_max / 2, h=wheel_clip_height / 3);
 			}
 		
 			translate([0, 0, wheel_clip_height]) cube([wheel_clip_gap, wheel_clip_depth, wheel_clip_height], true);
