@@ -27,7 +27,7 @@ wheel_clip_width_max = 15.6;
 wheel_clip_jut_height = 6.1;
 wheel_clip_depth = 8.1;
 
-wheel_underneath_opening_diameter = 40.5;
+wheel_underneath_opening_diameter = 42;
 wheel_underneath_opening_height_additional = 2;
 
 difference() {
@@ -88,9 +88,9 @@ union() {
 			union() {
 				cylinder(r=wheel_clip_width_min / 2, h=wheel_clip_height);
 				translate([0, 0, wheel_clip_height - wheel_clip_jut_height]) cylinder(r1=wheel_clip_width_max / 2, r2=wheel_clip_width_min / 2, h=wheel_clip_jut_height);
-				cylinder(r1=wheel_clip_width_max / 2, r2=wheel_clip_width_min / 2, h=wheel_clip_height - wheel_clip_jut_height);
 
-				//cylinder(r=wheel_clip_width_max / 2, h=wheel_clip_height / 3);
+				cylinder(r1=wheel_clip_width_max / 2, r2=wheel_clip_width_min / 2, h=wheel_clip_height - wheel_clip_jut_height);
+				//cylinder(r=wheel_clip_width_max / 2, h=wheel_clip_height / 3); // Uncomment this line and comment the previous line for the original clip design.
 			}
 		
 			translate([0, 0, wheel_clip_height]) cube([wheel_clip_gap, wheel_clip_depth, wheel_clip_height], true);
