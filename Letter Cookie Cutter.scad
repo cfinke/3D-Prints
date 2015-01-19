@@ -3,7 +3,7 @@
  */
 
 // Text for the cutter.
-cutter_text = "J";
+cutter_text = "S";
 
 // Height of the cutter in mm.
 cutter_size = 64;
@@ -23,15 +23,15 @@ cutter_height = 10;
 // Width of the flange in mm.
 flange_width = 6;
 
-cutterMinimum = 1;
+cutterMinimum = 1.75;
 
 mirror([1, 0, 0]) {
-    minkowski() {
-            outline();
-            cylinder(r1 = cutter_thickness / 3, r2 = cutterMinimum / 3, h = cutter_height);
-    };
-    
-    flange();
+	minkowski() {
+			outline();
+			cylinder(r1 = cutter_thickness / 3, r2 = cutterMinimum / 3, h = cutter_height);
+	};
+	
+	flange();
 };
 
 module flange() {
