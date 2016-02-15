@@ -6,4 +6,4 @@ The base also has a hole that can accept a screw if you want to attach it that w
 
 ![Three pegs](http://www.chrisfinke.com/files/2016/02/IMG_4113.jpg)
 
-See http://www.chrisfinke.com/2016/02/15/3d-printed-coat-rack-peg/
+See http://www.chrisfinke.com/2016/02/17/3d-printed-coat-rack-peg/
